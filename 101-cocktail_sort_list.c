@@ -56,8 +56,7 @@ void swap_prev_node(listint_t **list, listint_t **tail, listint_t **head)
 
 /**
  * cocktail_sort_list - sorts an array of integers using Cocktail sort
- * @array: array to be sorted
- * @size: size of the array
+ * @list: list to be sorted
  *
  * Return: nothing
  */

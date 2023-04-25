@@ -2,8 +2,7 @@
 
 /**
  * insertion_sort_list - sorts an array of integers using Insertion sort
- * @array: array to be sorted
- * @size: size of the array
+ * @list: list to be sorted
  *
  * Return: nothing
  */
