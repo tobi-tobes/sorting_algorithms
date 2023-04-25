@@ -37,7 +37,7 @@ void lomuto(int *array, int lower, int upper, size_t size)
 {
 	int i, j, pivot, temp;
 
-	if (sorted(array, lower, upper) || lower >= upper)
+	if (lower >= upper)
 		return;
 
 	pivot = array[upper];
