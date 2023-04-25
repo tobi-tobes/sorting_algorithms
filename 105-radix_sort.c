@@ -5,8 +5,10 @@
  *                       in ascending order using the counting sort algorithm.
  * @array: An array of integers.
  * @size: The size of the array.
- * @sig: The significant digit to sort on.
- * @buff: A buffer to store the sorted array.
+ * @sigf: The significant digit to sort on.
+ * @buffer: A buffer to store the sorted array.
+ *
+ * Return: Nothing
  */
 void radix_counting_sort(int *array, size_t size, int sigf, int *buffer)
 {
