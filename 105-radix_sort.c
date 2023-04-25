@@ -8,26 +8,23 @@
  * @sig: The significant digit to sort on.
  * @buff: A buffer to store the sorted array.
  */
-void radix_counting_sort(int *array, size_t size, int sig, int *buff)
+void radix_counting_sort(int *array, size_t size, int sigf, int *buffer)
 {
-	int count[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+	int count[10] = {0};
 	int j;
 	size_t i;
 
-	for (i = 0; i < size; i++)
-		count[(array[i] / sig) % 10] += 1;
+	for (i = 0; i < size; ++i)
+		count[(array[i] / sigf) % 10]++;
 
-	for (i = 0; i < 10; i++)
+	for (i = 1; i < 10; ++i)
 		count[i] += count[i - 1];
 
-	for (j = size - 1; j >= 0; j--)
-	{
-		buff[count[(array[j] / sig) % 10] - 1] = array[j];
-		count[(array[j] / sig) % 10] -= 1;
-	}
+	for (j = size - 1; j >= 0; --j)
+		buffer[--count[(array[j] / sigf) % 10]] = array[j];
 
-	for (i = 0; i < size; i++)
-		array[i] = buff[i];
+	for (i = 0; i < size; ++i)
+		array[i] = buffer[i];
 }
 
 /**
@@ -39,30 +36,29 @@ void radix_counting_sort(int *array, size_t size, int sig, int *buff)
  */
 void radix_sort(int *array, size_t size)
 {
-	int max, sig, *buff;
+	int max, sigf, *buffer;
 	size_t i;
 
 	if (array == NULL || size < 2)
 		return;
 
-	buff = malloc(sizeof(int) * size);
-	if (buff == NULL)
-		return;
-
 	max = array[0];
-	for (i = 1; i < size; i++)
+	for (i = 1; i < size; ++i)
 	{
 		if (array[i] > max)
 			max = array[i];
 	}
 
-	sig = 1;
-	while (max / sig > 0)
-	{
-		radix_counting_sort(array, size, sig, buff);
-		print_array(array, size);
-		sig *= 10;
-	}
+	buffer = malloc(sizeof(int) * size);
+	if (buffer == NULL)
+		return;
 
-	free(buff);
+	sigf = 1;
+	while (max / sigf > 0)
+	{
+		radix_counting_sort(array, size, sigf, buffer);
+		print_array(array, size);
+		sigf *= 10;
+	}
+	free(buffer);
 }
