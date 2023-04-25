@@ -1,27 +1,22 @@
 #include "sort.h"
 
-void swap_ints(int *a, int *b);
-int hoare_partition(int *array, size_t size, int left, int right);
-void hoare_sort(int *array, size_t size, int left, int right);
-void quick_sort_hoare(int *array, size_t size);
-
 /**
- * swap_ints - Swaps two integers in an array.
+ * swap - Swaps two integers in an array.
  * @a: First integer to swap.
  * @b: Second integer to swap.
  */
-void swap_ints(int *a, int *b)
+void swap(int *a, int *b)
 {
-	int tmp;
+	int temp;
 
-	tmp = *a;
+	temp = *a;
 	*a = *b;
-	*b = tmp;
+	*b = temp;
 }
 
 /**
  * hoare_partition - Order a subset of an array of integers
- *                   according to the hoare partition scheme.
+ * according to the hoare partition scheme.
  * @array: array of integers.
  * @size: size of the array.
  * @left: starting index of the subset to order.
@@ -48,7 +43,7 @@ int hoare_partition(int *array, size_t size, int left, int right)
 
 		if (above < below)
 		{
-			swap_ints(array + above, array + below);
+			swap(array + above, array + below);
 			print_array(array, size);
 		}
 	}

@@ -47,6 +47,10 @@ void rec_merge_sort(int *array, int lower, int upper);
 void heapify(int *array, size_t size, size_t heap_size, int position);
 void swap_next_node(listint_t **list, listint_t **tail, listint_t **head);
 void swap_prev_node(listint_t **list, listint_t **tail, listint_t **head);
+void radix_counting_sort(int *array, size_t size, int sig, int *buff);
+void swap(int *a, int *b);
+int hoare_partition(int *array, size_t size, int left, int right);
+void hoare_sort(int *array, size_t size, int left, int right);
 
 /* Sorting algoritms */
 void bubble_sort(int *array, size_t size);
