@@ -11,8 +11,8 @@
  */
 void heapify(int *array, size_t size, size_t heap_size, int position)
 {
-	size_t largest, l, r;
-	int temp;
+	size_t l, r;
+	int temp, largest;
 
 	largest = position;
 	l = 2 * position + 1;
@@ -43,7 +43,7 @@ void heapify(int *array, size_t size, size_t heap_size, int position)
  */
 void heap_sort(int *array, size_t size)
 {
-	int i, start, temp;
+	int i, temp;
 
 	if (array == NULL || size < 2)
 		return;

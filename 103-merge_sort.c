@@ -30,8 +30,8 @@ void print_output(int *left_array, int *right_array, size_t left_size,
  */
 void merge_sorted(int *array, int lower, int midpoint, int upper)
 {
-	size_t left_len, right_len, i, j, k, m;
-	int right[200], left[200];
+	size_t left_len, right_len, i, j;
+	int right[200], left[200], k;
 
 	left_len = (midpoint - lower) + 1;
 	right_len = upper - midpoint;
