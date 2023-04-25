@@ -44,6 +44,7 @@ void print_output(int *left_array, int *right_array, size_t left_size,
 		  size_t right_size);
 void merge_sorted(int *array, int lower, int midpoint, int upper);
 void rec_merge_sort(int *array, int lower, int upper);
+void heapify(int *array, size_t size, size_t heap_size, int position);
 
 /* Sorting algoritms */
 void bubble_sort(int *array, size_t size);

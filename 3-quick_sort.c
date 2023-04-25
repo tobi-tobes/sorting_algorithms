@@ -11,6 +11,7 @@
 int sorted(int *array, int lower, int upper)
 {
 	int i, is_sorted = 1;
+	(void)lower;
 
 	for (i = 1; i < upper + 1; i++)
 	{
