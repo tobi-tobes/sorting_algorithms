@@ -49,6 +49,7 @@ void lomuto(int *array, int lower, int upper, size_t size)
 			temp = array[i];
 			array[i] = array[j];
 			array[j] = temp;
+			print_array(array, size);
 			j++;
 		}
 	}
